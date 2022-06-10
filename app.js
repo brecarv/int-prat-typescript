@@ -1,19 +1,47 @@
 "use strict";
-let button = document.getElementById("button");
-let input1 = document.getElementById("input1");
-let input2 = document.getElementById("input2");
-function adicionarNumeros(numero1, numero2) {
-    let resultado = numero1 + numero2;
-    if (devePrintar) {
-        console.log(frase + resultado);
+const pessoa = {
+    nome: "Mariana",
+    idade: 28,
+    profissao: "Engenheira de Software",
+};
+pessoa.idade = 28;
+const joao = {
+    nome: "Joao",
+    idade: 25,
+    profissao: "Pedreiro",
+};
+const fernanda = {
+    nome: "Fernanda",
+    idade: 23,
+    profissao: "Engenheira de Software",
+};
+var Profissao;
+(function (Profissao) {
+    Profissao["PROFESSOR"] = "Professor(a)";
+    Profissao["ENGENHEIRO"] = "Engenheiro(a) de Software";
+    Profissao["PEDREIRO"] = "Pedreiro";
+    Profissao["PINTOR"] = "Pintor";
+    Profissao["POLICIAL"] = "Policial";
+})(Profissao || (Profissao = {}));
+const felipe = {
+    nome: "Felipe",
+    idade: 29,
+    profissao: Profissao.ENGENHEIRO,
+};
+const joana = {
+    nome: "Joana",
+    idade: 27,
+    profissao: Profissao.ENGENHEIRO,
+};
+const maria = {
+    nome: "Maria",
+    matricula: 10001,
+    idade: 28,
+    disciplinas: ["ED I", "ED II", "PDS - WEB"],
+};
+function listar(lista) {
+    for (const item of lista) {
+        console.log("- ", item);
     }
-    return numero1 + numero2;
 }
-let devePrintar = true;
-let frase;
-frase = "O valor é: ";
-if (button) {
-    button.addEventListener("click", () => {
-        console.log(adicionarNumeros(Number(input1 === null || input1 === void 0 ? void 0 : input1.value), Number(input2 === null || input2 === void 0 ? void 0 : input2.value)));
-    });
-}
+listar(maria.disciplinas);
